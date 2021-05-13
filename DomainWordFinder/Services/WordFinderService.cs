@@ -47,9 +47,9 @@ namespace DomainWordFinder
 
 				return resultSet.ToList();
 			}
-			catch(Exception ex)
+			catch(Exception)
             {
-				return new List<string>() { ex.Message };
+				throw;
             }
 		}
 

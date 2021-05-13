@@ -24,11 +24,18 @@ public class Program
 		Console.Write("Search terms separated by comma: " + string.Join(",", wordstream));
 		Console.WriteLine();
 
-		IWordFinderService wordFinderService = new WordFinderService(matrix);
-		var result = wordFinderService.Find(wordstream);		
-		Console.WriteLine();
-		Console.Write("Result: ");
-		Console.Write(string.Join(",", result));
+		try
+		{
+			IWordFinderService wordFinderService = new WordFinderService(matrix);
+			var result = wordFinderService.Find(wordstream);
+			Console.WriteLine();
+			Console.Write("Search result: ");
+			Console.Write(string.Join(",", result));
+		}
+		catch (Exception ex){
+			Console.WriteLine();
+			Console.Write("Error: " + ex.Message);
+		}
 		
 		Console.WriteLine();
 		Console.WriteLine();
