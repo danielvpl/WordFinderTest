@@ -18,5 +18,39 @@ namespace UnitTestWordFinder
 
             Assert.Equal(result, new List<string>() { "chill", "cold", "wind" });
         }
+
+        [Fact]
+        public void WordFinderServiceFindTestErrorMaxSize()
+        {
+            var matrix = new string[] { "abcdcefgh", "fgwiosdfa", "chillaaaa", "pqnsdbbbb", "uvdxycccc", "abcdcefgi", "fgwiosdfb", "chillaaab", "pqnsdbbba" };
+            var wordstream = new string[] { "chill", "cold", "wind", "cloud" };
+
+            try
+            {
+                var wordFinderService = new WordFinderService(matrix);
+                var result = wordFinderService.Find(wordstream);
+            }
+            catch (Exception e)
+            {
+                Assert.Equal("Matrix max size is 64x64", e.Message);
+            }
+        }
+
+        [Fact]
+        public void WordFinderServiceFindTestErrorFormat()
+        {
+            var matrix = new string[] { "abcdcdefg", "fgwio", "chill", "pqnsd", "uvdxy" };
+            var wordstream = new string[] { "chill", "cold", "wind", "cloud" };
+
+            try
+            {
+                var wordFinderService = new WordFinderService(matrix);
+                var result = wordFinderService.Find(wordstream);
+            }
+            catch (Exception e)
+            {
+                Assert.Equal("Bad formatted matrix", e.Message);
+            }            
+        }
     }
 }

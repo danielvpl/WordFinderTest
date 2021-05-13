@@ -56,12 +56,12 @@ namespace DomainWordFinder
 		private void validateMatrixSize()
         {
 			if (_wordFinder.matrix.Count > 8)
-				throw new System.Exception("Matrix max size is 64x64.");
+				throw new System.Exception("Matrix max size is 64x64");
 
 			foreach (var item in _wordFinder.matrix)
             {
 				if(item.Length != _wordFinder.matrix.Count)
-					throw new System.Exception("Bad formatted matrix.");
+					throw new System.Exception("Bad formatted matrix");
 			}			
 		}
 	}

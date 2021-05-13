@@ -36,8 +36,7 @@ public class Program
 			Console.WriteLine();
 			Console.Write("Error: " + ex.Message);
 		}
-		
-		Console.WriteLine();
+				
 		Console.WriteLine();
 		Console.WriteLine();
 		Console.WriteLine("Press any key to close");
