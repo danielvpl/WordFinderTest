@@ -16,7 +16,7 @@ public class Program
 		Console.WriteLine("Matrix:");
 		Console.WriteLine();
 		foreach (var item in matrix)
-        {
+        	{
 			Console.WriteLine(item);
 		}		
 
